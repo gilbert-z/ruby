@@ -11,6 +11,17 @@
     <result column="lookcount" jdbcType="INTEGER" property="lookcount" />
     <result column="flag" jdbcType="VARCHAR" property="flag" />
   </resultMap>
+  <resultMap id="BaseResultMap1" type="com.qfedu.ruby.vo.Vtshare">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="typename" jdbcType="VARCHAR" property="type" />
+    <result column="nickname" jdbcType="VARCHAR" property="username" />
+    <result column="headimg" jdbcType="VARCHAR" property="userheadimg" />
+    <result column="lookcount" jdbcType="INTEGER" property="lookcount" />
+    <result column="flag" jdbcType="VARCHAR" property="flag" />
+  </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qfedu.ruby.pojo.Tshare">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
@@ -155,5 +166,17 @@
       lookcount = #{lookcount,jdbcType=INTEGER},
       flag = #{flag,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectAll" resultMap="BaseResultMap1">
+    select s.id,s.title,s.picture,s.content,s.createtime,t.typename,u.headimg,u.nickname,s.lookcount,s.flag from t_share s
+    inner join t_user u
+    on u.id=s.uid
+    inner join t_goodstype t
+    on t.id=s.typeid
+  </select>
+
+  <update id="updateLookcount" parameterType="com.qfedu.ruby.pojo.Tshare">
+  	update t_share set lookcount=lookcount+1 where id=#{id}
   </update>
 </mapper>
