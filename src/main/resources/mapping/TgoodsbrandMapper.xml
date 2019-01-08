@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qfedu.ruby.dao.TgoodsbrandMapper">
+  <resultMap id="BaseResultMap" type="com.qfedu.ruby.pojo.Tgoodsbrand">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="brandname" jdbcType="VARCHAR" property="brandname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, brandname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_goodsbrand
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_goodsbrand
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand">
+    insert into t_goodsbrand (id, brandname)
+    values (#{id,jdbcType=INTEGER}, #{brandname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand">
+    insert into t_goodsbrand
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="brandname != null">
+        brandname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="brandname != null">
+        #{brandname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand">
+    update t_goodsbrand
+    <set>
+      <if test="brandname != null">
+        brandname = #{brandname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand">
+    update t_goodsbrand
+    set brandname = #{brandname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
