@@ -7,7 +7,7 @@ public class Tuser {
 
     private String password;
 
-    private String phone;
+    private String email;
 
     private Integer sex;
 
@@ -39,12 +39,12 @@ public class Tuser {
         this.password = password == null ? null : password.trim();
     }
 
-    public String getPhone() {
-        return phone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
     public Integer getSex() {

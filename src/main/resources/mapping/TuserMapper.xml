@@ -5,13 +5,13 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
     <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="headimg" jdbcType="VARCHAR" property="headimg" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, nickname, password, phone, sex, headimg, flag
+    id, nickname, password, email, sex, headimg, flag
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -25,10 +25,10 @@
   </delete>
   <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tuser">
     insert into t_user (id, nickname, password, 
-      phone, sex, headimg, 
+      email, sex, headimg, 
       flag)
     values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{headimg,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{headimg,jdbcType=VARCHAR}, 
       #{flag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tuser">
@@ -43,8 +43,8 @@
       <if test="password != null">
         password,
       </if>
-      <if test="phone != null">
-        phone,
+      <if test="email != null">
+        email,
       </if>
       <if test="sex != null">
         sex,
@@ -66,8 +66,8 @@
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        #{phone,jdbcType=VARCHAR},
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=INTEGER},
@@ -89,8 +89,8 @@
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
-      <if test="phone != null">
-        phone = #{phone,jdbcType=VARCHAR},
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
       </if>
       <if test="sex != null">
         sex = #{sex,jdbcType=INTEGER},
@@ -108,7 +108,7 @@
     update t_user
     set nickname = #{nickname,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=INTEGER},
       headimg = #{headimg,jdbcType=VARCHAR},
       flag = #{flag,jdbcType=INTEGER}
