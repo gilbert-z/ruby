@@ -22,7 +22,7 @@ public class UserController {
 
     @ApiImplicitParam(name = "email", value = "需要接收验证码的邮箱", required=true,paramType="query")
     @ApiOperation(value = "获取邮箱验证码接口",httpMethod = "GET",notes = "输入邮箱地址")
-    @GetMapping("emailcode")
+    @GetMapping("user/emailcode.do")
     ResultBean getEmailCode(String email) {
 
         return email!=null?userService.EmailCode(email): ResultUtil.setERROR("请输入邮箱");
@@ -34,7 +34,7 @@ public class UserController {
             @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "query")
     })
     @ApiOperation(value = "邮箱地址，验证码，密码来注册账号",httpMethod = "GET",notes = "注册账号")
-    @GetMapping("register")
+    @GetMapping("user/register.do")
     ResultBean register(@Param("email") String email,@Param("code") String code,@Param("password") String password) {
 
         if (email==null||email==""||code==null||code==""||password==null||password==""){
@@ -48,12 +48,28 @@ public class UserController {
             @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "query")
     })
     @ApiOperation(value = "邮箱密码登录",httpMethod = "GET",notes = "邮箱地址，密码来登录账号。返回值data中为token")
-    @GetMapping("login")
+    @GetMapping("user/login.do")
     ResultBean login(@Param("email") String email,@Param("password") String password){
         if (email==null||email==""||password==null||password=="") {
             return ResultUtil.setERROR("请输入正确的账号密码");
         }else {
-            return userService.login("gilbertzz@163.com","123");
+            return userService.login(email,password);
+        }
+    }
+
+
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "email", value = "邮箱", required = true, paramType = "query"),
+            @ApiImplicitParam(name = "code", value = "验证码", required = true, paramType = "query"),
+    })
+    @ApiOperation(value = "用验证码登录",httpMethod = "GET",notes = "邮箱地址，验证码登录账号")
+    @GetMapping("user/register.do")
+    ResultBean loginByCode(@Param("email") String email,@Param("code") String code) {
+
+        if (email==null||email==""||code==null||code==""){
+            return ResultUtil.setERROR("请输入正确验证码");
+        } else {
+            return userService.loginByCode(email,code);
         }
     }
 }
