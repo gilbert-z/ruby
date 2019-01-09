@@ -1,3 +1,115 @@
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T042132.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T042033.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041943.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041928.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041920.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041520.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041220.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041019.500.json
+
+###
+
+GET http://localhost:8081/cs/selectBySid.do?sid=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T120103.200.json
+
+###
+
+GET http://localhost:8081/cs/selectBySid.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T120009.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T100259.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T100207.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T095629.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T083727.200.json
+
+###
+
 GET http://localhost:8081/ts/selectAll.do
 Accept: */*
 Cache-Control: no-cache

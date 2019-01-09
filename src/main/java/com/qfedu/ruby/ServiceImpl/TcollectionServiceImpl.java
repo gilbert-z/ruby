@@ -14,6 +14,6 @@ public class TcollectionServiceImpl implements TcollectionService {
     private TcollectionMapper cm;
     @Override
     public int insertC(Tcollection tcollection) {
-        return insertC(tcollection);
+        return cm.insertC(tcollection);
     }
 }
