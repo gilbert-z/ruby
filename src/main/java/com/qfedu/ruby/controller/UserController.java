@@ -43,7 +43,11 @@ public class UserController {
             return userService.register(email,code,password);
         }
     }
-
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "email", value = "邮箱", required = true, paramType = "query"),
+            @ApiImplicitParam(name = "password", value = "密码", required = true, paramType = "query")
+    })
+    @ApiOperation(value = "邮箱密码登录",httpMethod = "GET",notes = "邮箱地址，密码来登录账号。返回值data中为token")
     @GetMapping("login")
     ResultBean login(@Param("email") String email,@Param("password") String password){
         if (email==null||email==""||password==null||password=="") {
