@@ -30,4 +30,6 @@ public interface TshareMapper {
     List<Vtshare> selectAll();
 
     int updateLookcount(Tshare tshare);
+
+    Vtshare selectById(Integer id);
 }

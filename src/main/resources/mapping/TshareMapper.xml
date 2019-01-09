@@ -179,4 +179,13 @@
   <update id="updateLookcount" parameterType="com.qfedu.ruby.pojo.Tshare">
   	update t_share set lookcount=lookcount+1 where id=#{id}
   </update>
+
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap1">
+    select s.id,s.title,s.picture,s.content,s.createtime,t.typename,u.headimg,u.nickname,s.lookcount,s.flag from t_share s
+    inner join t_user u
+    on u.id=s.uid
+    inner join t_goodstype t
+    on t.id=s.typeid
+    where s.id = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -22,6 +22,12 @@ public class tShareServiceImpl implements tShareService {
 
     @Override
     public int updateLookcount(Tshare tshare) {
-       return tm.updateLookcount(tshare);
+
+        return tm.updateLookcount(tshare);
+    }
+
+    @Override
+    public Vtshare selectById(Integer id) {
+        return tm.selectById(id);
     }
 }

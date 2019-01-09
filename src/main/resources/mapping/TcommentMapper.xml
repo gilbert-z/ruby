@@ -9,6 +9,15 @@
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
+  <resultMap id="BaseResultMap1" type="com.qfedu.ruby.vo.Vcomment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+    <result column="nickname" jdbcType="VARCHAR" property="username" />
+    <result column="headimg" jdbcType="VARCHAR" property="userheadimg" />
+  </resultMap>
   <sql id="Base_Column_List">
     id, viewid, sid, createtime, content, flag
   </sql>
@@ -103,4 +112,11 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectBySid" parameterType="java.lang.Integer" resultMap="BaseResultMap1">
+    select c.id,c.sid,c.createtime,c.content,c.flag,u.nickname,u.headimg from t_comment c
+    inner join t_user u
+    on u.id=c.viewid
+    where sid=#{sid}
+  </select>
 </mapper>

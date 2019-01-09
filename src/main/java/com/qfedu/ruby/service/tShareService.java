@@ -10,4 +10,6 @@ public interface tShareService {
     List<Vtshare> selectAll();
 
     int updateLookcount(Tshare tshare);
+
+    Vtshare selectById(Integer id);
 }
