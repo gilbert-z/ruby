@@ -24,12 +24,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tuser">
-    insert into t_user (id, nickname, password, 
-      email, sex, headimg, 
-      flag)
-    values (#{id,jdbcType=INTEGER}, #{nickname,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, #{headimg,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=INTEGER})
+    insert into t_user ( password,
+      email)
+    values ( #{password,jdbcType=VARCHAR},
+      #{email,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tuser">
     insert into t_user
@@ -114,4 +112,17 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByEmail" resultType="java.lang.Integer">
+
+    SELECT COUNT(email) from t_user u where u.email= #{email}
+  </select>
+
+  <select id="selectByemailAndPass" resultMap="BaseResultMap">
+
+    SELECT
+    <include refid="Base_Column_List" />
+    from t_user u where u.email = #{email,jdbcType=VARCHAR} and u.password = #{password,jdbcType=VARCHAR}
+  </select>
+
 </mapper>
