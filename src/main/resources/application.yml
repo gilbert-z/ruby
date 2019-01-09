@@ -3,8 +3,8 @@ server:
 spring:
   datasource:
     username: root
-    password: root
-    url: jdbc:mysql://10.8.155.6:3306/ruby?serverTimezone=GMT
+    password: qjz19950920
+    url: jdbc:mysql://10.8.155.66:3306/ruby?serverTimezone=GMT
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
   mail:

@@ -1,0 +1,386 @@
+GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T094644.200.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T092250.200.json
+
+###
+
+GET 10.8.155.6:3306/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://10.8.155.6:3306/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://10.8.155.6:3306/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://10.8.155.6:3306/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T074624.200.json
+
+###
+
+GET http://localhost:8081/login?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T055901.200.json
+
+###
+
+GET http://localhost:8081/register?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T055130.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=328483071@qq.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T055038.200.json
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T051854.500.json
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T051431.500.json
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T051233.500.json
+
+###
+
+GET http://localhost:8081/login?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T051040.500.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=9508&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043716.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=5423&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043706.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=gilbertzz@163.com&code=5423&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043640.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=5423&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043600.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=5423&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043216.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=7647&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T043030.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=gilbertzz@163.com&code=7647&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T042957.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=7647&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T042214.200.json
+
+###
+
+GET http://localhost:8081/register?email=gilbertzz@163.com&code=7647&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041922.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=gilbertzz@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041854.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=274138089@qq.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T041419.200.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T034310.200.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033845.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033806.200.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033626.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033444.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033148.200.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T033027.200.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T032344.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T031813.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T031123.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T031106.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T031105.500.json
+
+###
+
+GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T030815.500.json
+
+###
+
+GET http://localhost:8081/emailcode?email=hzzpfzl@163.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T030731.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=hzzpfzl@163.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T024919.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=274138089@qq.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T024646.200.json
+
+###
+
+GET http://localhost:8081/emailcode?email=274138089@qq.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T101636.200.json
+
+###
+
+GET http://localhost:8081/emailcode
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T101519.500.json
+
+###
+
+GET http://localhost:8081/emailcode
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T100855.500.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T074026.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T073806.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-08T073723.200.json
+
+###
+

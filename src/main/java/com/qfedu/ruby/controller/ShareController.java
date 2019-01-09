@@ -5,6 +5,9 @@ import com.qfedu.ruby.service.tShareService;
 import com.qfedu.ruby.util.ResultBean;
 import com.qfedu.ruby.util.ResultUtil;
 import com.qfedu.ruby.vo.Vtshare;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.xml.crypto.Data;
 import java.util.List;
 
+@Api(value = "发现分享模块",tags = "发现中 分享列表，查看次数（也是详情中阅读数），分享详情")
 @RestController
 public class ShareController {
 
@@ -21,6 +25,7 @@ public class ShareController {
     @Autowired
     private tShareService ts;
 
+    @ApiOperation(value = "发现分享列表接口",httpMethod = "GET",notes = "主页的查询所有分享")
     @GetMapping("/ts/selectAll.do")
     @CrossOrigin
     public ResultBean selectAll(){
@@ -35,6 +40,9 @@ public class ShareController {
         return rb;
     }
 
+
+
+    @ApiOperation(value = "查看次数和阅读次数接口",httpMethod = "POST",notes = "参数是别查看的分享")
     @PostMapping("/ts/updateLookcount.do")
     @CrossOrigin
     public ResultBean updateLookcount(Tshare tshare) {
@@ -59,6 +67,7 @@ public class ShareController {
         return rb;
     }
 
+    @ApiOperation(value = "查看分享详情",httpMethod = "GET",notes = "参数是查看分享的id")
     @GetMapping("/ts/selectById.do")
     @CrossOrigin
     public ResultBean selectById(Integer id){
