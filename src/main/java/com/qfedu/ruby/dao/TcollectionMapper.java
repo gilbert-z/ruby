@@ -20,4 +20,6 @@ public interface TcollectionMapper {
     int updateByPrimaryKey(Tcollection record);
 
     int insertC(Tcollection tcollection);
+
+    Tcollection selectByUSid(Integer uid, Integer sid);
 }

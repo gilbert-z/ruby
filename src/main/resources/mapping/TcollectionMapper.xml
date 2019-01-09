@@ -71,4 +71,9 @@
     insert into t_collection (id, uid, sid)
     values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER})
   </insert>
+
+  <select id="selectByUSid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from t_collection
+    where uid = #{uid} and sid = #{sid}
+  </select>
 </mapper>
