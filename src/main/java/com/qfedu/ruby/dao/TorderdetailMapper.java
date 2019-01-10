@@ -1,5 +1,7 @@
 package com.qfedu.ruby.dao;
 
+import com.qfedu.ruby.pojo.Torderdetail;
+
 public interface TorderdetailMapper {
     int deleteByPrimaryKey(Integer id);
 

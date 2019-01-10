@@ -160,6 +160,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public ResultBean userInfo(String token) {
-        return null;
+        int uid = TokenParse.getUid(token);
+        Tuser tuser = userMapper.selectInfoByPrimaryKey(uid);
+
+        if (tuser==null){
+            return ResultUtil.setERROR("登录状态异常");
+        }else {
+            return ResultUtil.SUCCESS(tuser,SystemCon.OK);
+        }
     }
 }

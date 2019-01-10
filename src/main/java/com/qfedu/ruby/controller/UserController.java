@@ -122,4 +122,16 @@ public class UserController {
         }
     }
 
+    @ApiOperation(value = "设置新密码",httpMethod = "GET",notes = "传入token来重置密码")
+    @GetMapping("user/userinfo.do")
+    ResultBean userInfo(@Param("token") String token) {
+
+        if (token==null||token==""){
+            return ResultUtil.setERROR("请检查登录状态");
+        } else {
+            return userService.userInfo(token);
+        }
+    }
+
+
 }
