@@ -17,4 +17,6 @@ public interface UserService {
 
     public ResultBean loginOut();
 
+    public ResultBean newPass(String token,String password);
+
 }

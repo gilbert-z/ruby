@@ -141,4 +141,15 @@ public class UserServiceImpl implements UserService {
     public ResultBean loginOut() {
         return null;
     }
+    //根据token修改指定的用户密码
+    @Override
+    public ResultBean newPass(String token, String password) {
+        int uid = TokenParse.getUid(token);
+        System.out.println("需要修改的uid:"+uid);
+        Tuser user = new Tuser();
+        user.setId(uid);
+        user.setPassword(password);
+
+        return userMapper.updateByPrimaryKeySelective(user)==1?ResultUtil.OK():ResultUtil.setERROR("请检查密码格式");
+    }
 }
