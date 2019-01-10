@@ -1,6 +1,7 @@
 package com.qfedu.ruby.dao;
 
 import com.qfedu.ruby.pojo.Tshare;
+import com.qfedu.ruby.vo.VshareGoods;
 import com.qfedu.ruby.vo.Vtshare;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -34,4 +35,6 @@ public interface TshareMapper {
     Vtshare selectById(Integer id);
 
     int updateFlag(Integer id);
+
+    List<VshareGoods> selectShareGoods(Integer id);
 }

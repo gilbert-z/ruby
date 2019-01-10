@@ -192,4 +192,6 @@
   <update id="updateFlag" parameterType="java.lang.Integer">
     update t_share set flag=flag+1 where id=#{id}
   </update>
+
+
 </mapper>

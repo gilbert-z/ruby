@@ -9,6 +9,7 @@ import com.qfedu.ruby.util.token.TokenUtil;
 import com.qfedu.ruby.vo.Vcomment;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +28,7 @@ public class CommentController {
     @Autowired
     private TcommentService cs;
 
-    @ApiOperation(value = "每个分享中评论的接口",httpMethod = "GET",notes = "参数是根据分享id查询")
+    @ApiOperation(value = "查看每个分享中评论的接口",httpMethod = "GET",notes = "参数是根据分享id查询")
     @GetMapping("/cs/selectBySid.do")
     @CrossOrigin
     public ResultBean selectBySid(Integer sid){
@@ -45,24 +46,15 @@ public class CommentController {
     @ApiOperation(value = "添加分享评论接口",httpMethod = "POST",notes = "参数是整个评论表类，uid:用户id,sid:分享id")
     @PostMapping("/cs/insert.do")
     @CrossOrigin
-    public ResultBean insert(Tcomment tcomment,String token){
+    public ResultBean insert(@Param("tcomment") Tcomment tcomment,@Param("token") String token){
 
-        if (token!=null&&token!=""){
-
-            Date date = new Date();
-            tcomment.setCreatetime(date);
-            tcomment.setViewid(TokenParse.getUid(token));
-
-            if(cs.insert(tcomment) > 0){
+            if(cs.insert(tcomment,token) > 0){
 
                 return ResultUtil.OK();
             }else{
                 return ResultUtil.ERROR();
             }
-        } else {
 
-            return ResultUtil.setERROR("请登录");
-        }
 
     }
 }
