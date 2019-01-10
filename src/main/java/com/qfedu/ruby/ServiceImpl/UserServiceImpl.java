@@ -152,4 +152,14 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.updateByPrimaryKeySelective(user)==1?ResultUtil.OK():ResultUtil.setERROR("请检查密码格式");
     }
+
+    @Override
+    public ResultBean updateUser(Tuser tuser) {
+        return null;
+    }
+
+    @Override
+    public ResultBean userInfo(String token) {
+        return null;
+    }
 }

@@ -19,4 +19,8 @@ public interface UserService {
 
     public ResultBean newPass(String token,String password);
 
+    public ResultBean updateUser(Tuser tuser);
+
+    public ResultBean userInfo(String token);
+
 }

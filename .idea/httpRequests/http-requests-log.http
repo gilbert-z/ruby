@@ -1,59 +1,52 @@
-GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/newpass.do?email=328483071@qq.com&code=3456&password=12345&token=A1tVghsrGOd7AZahx1rBHEEG5C5ZSRjV9f3JZnx/V6lynTUtsIr5A575zfZngFjWd9PFocTuk+PfuEZpwWo9yPxGzJRXZtedA4UEv8gACq/1g5Q9L0rDw9vbaAOwlpUyQHq7lTuL4y5Cxftm+PW03xgS+MHTYVux9Up4RrmCs9xJ0Td+oj0VpXX9WBWbzR2jh2FKm1PlgQTEnQdvFymJxQHds8Em/f7TVtHQMTqOkEM=
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T024609.200.json
+<> 2019-01-10T021241.200.json
 
 ###
 
-GET http://localhost:8081/emailcode?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/newpass.do?email=328483071@qq.com&code=3456&password=12345&token=A1tVghsrGOd7AZahx1rBHEEG5C5ZSRjV9f3JZnx/V6lynTUtsIr5A575zfZngFjWd9PFocTuk+PfuEZpwWo9yPxGzJRXZtedA4UEv8gACq/1g5Q9L0rDw9vbaAOwlpUyQHq7lTuL4y5Cxftm+PW03xgS+MHTYVux9Up4RrmCs9xJ0Td+oj0VpXX9WBWbzR2jh2FKm1PlgQTEnQdvFymJxQHds8Em/f7TVtHQMTqOkEM=
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T024526.200.json
+<> 2019-01-10T021117.200.json
 
 ###
 
-POST http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/newpass.do?email=328483071@qq.com&code=3456&password=12345&token=A1tVghsrGOd7AZahx1rBHEEG5C5ZSRjV9f3JZnx/V6lynTUtsIr5A575zfZngFjWd9PFocTuk+PfuEZpwWo9yPxGzJRXZtedA4UEv8gACq/1g5Q9L0rDw9vbaAOwlpUyQHq7lTuL4y5Cxftm+PW03xgS+MHTYVux9Up4RrmCs9xJ0Td+oj0VpXX9WBWbzR2jh2FKm1PlgQTEnQdvFymJxQHds8Em/f7TVtHQMTqOkEM=
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T111256.200.json
+<> 2019-01-10T020921.200.json
 
 ###
 
-POST http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T111243.200.json
+<> 2019-01-10T020829.200.json
 
 ###
 
-GET http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/loginout.do?email=328483071@qq.com&code=3456&password=123
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T111220.405.json
+<> 2019-01-10T020757.200.json
 
 ###
 
-GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+GET http://localhost:8081/user/forgetpass.do?email=328483071@qq.com&code=3456&password=123
 Accept: */*
 Cache-Control: no-cache
 
-<> 2019-01-10T102413.200.json
+<> 2019-01-10T020542.200.json
 
 ###
 
-GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-10T102346.200.json
-
-###
-
+<<<<<<< Updated upstream
 GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
 Accept: */*
 Cache-Control: no-cache
@@ -105,6 +98,117 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-01-09T074624.200.json
+
+###
+
+GET http://localhost:8081/login?email=328483071@qq.com&code=3456&password=123
+=======
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+>>>>>>> Stashed changes
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T095402.200.json
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T095310.200.json
+
+###
+
+GET http://localhost:8081/user/register.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/register.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T093751.500.json
+
+###
+
+GET http://localhost:8081/user/emailcode.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T093639.200.json
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/emailcode.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T091317.200.json
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/user/login.do?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8081/login?email=328483071@qq.com&code=3456&password=123
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-09T085951.404.json
 
 ###
 
@@ -262,125 +366,14 @@ Cache-Control: no-cache
 
 <> 2019-01-09T041419.200.json
 
-###
 
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
 
-<> 2019-01-09T034310.200.json
 
-###
 
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
 
-<> 2019-01-09T033845.500.json
 
-###
 
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
 
-<> 2019-01-09T033806.200.json
 
-###
 
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T033626.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T033444.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T033148.200.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T033027.200.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T032344.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T031813.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T031123.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T031106.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T031105.500.json
-
-###
-
-GET http://localhost:8081/register?email=hzzpfzl@163.com&code=3397&password=123
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T030815.500.json
-
-###
-
-GET http://localhost:8081/emailcode?email=hzzpfzl@163.com
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T030731.200.json
-
-###
-
-GET http://localhost:8081/emailcode?email=hzzpfzl@163.com
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T024919.200.json
-
-###
 
