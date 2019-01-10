@@ -113,12 +113,10 @@
     where sid=#{sid}
   </select>
 
-  <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tcomment">
-    insert into t_comment (id, viewid, sid,
-      createtime, content, flag
-      )
+ <!-- <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tcomment">
+    insert into t_comment (id, viewid, sid, createtime, content, flag)
     values (#{id,jdbcType=INTEGER}, #{viewid,jdbcType=INTEGER}, #{sid,jdbcType=INTEGER},
       #{createtime,jdbcType=TIMESTAMP}, #{content,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER}
       )
-  </insert>
+  </insert>-->
 </mapper>

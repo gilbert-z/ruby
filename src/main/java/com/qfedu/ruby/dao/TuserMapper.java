@@ -27,5 +27,7 @@ public interface TuserMapper {
 
     Tuser selectUserByEmail(String email);
 
+    Tuser selectInfoByPrimaryKey(Integer id);
+
 
 }

@@ -2,6 +2,7 @@ package com.qfedu.ruby.dao;
 
 import com.qfedu.ruby.pojo.Tcomment;
 import com.qfedu.ruby.vo.Vcomment;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
@@ -22,5 +23,6 @@ public interface TcommentMapper {
 
     List<Vcomment> selectBySid(Integer sid);
 
-    int insert(Tcomment record);
+    @Insert("insert into t_comment(viewid, sid, createtime, content, flag) values(1,#{sid}now(),#{content},#{flag})")
+    int insert1(Tcomment record);
 }

@@ -3,6 +3,8 @@ package com.qfedu.ruby.ServiceImpl;
 import com.qfedu.ruby.dao.TcommentMapper;
 import com.qfedu.ruby.pojo.Tcomment;
 import com.qfedu.ruby.service.TcommentService;
+import com.qfedu.ruby.util.token.TokenParse;
+import com.qfedu.ruby.util.token.TokenUtil;
 import com.qfedu.ruby.vo.Vcomment;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,11 @@ public class TcommentServiceImpl implements TcommentService {
     }
 
     @Override
-    public int insert(Tcomment tcomment) {
-        return cm.insert(tcomment);
+    public int insert(Tcomment tcomment,String token) {
+        System.out.println("________!!!!_____");
+        int uid = TokenUtil.parseToken(token).getId();
+        System.out.println("~~~~~~~~uid"+uid);
+        tcomment.setViewid(uid);
+        return cm.insert1(tcomment);
     }
 }

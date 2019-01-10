@@ -1,5 +1,7 @@
 package com.qfedu.ruby.dao;
 
+import com.qfedu.ruby.pojo.Tgoods;
+
 public interface TgoodsMapper {
     int deleteByPrimaryKey(Integer id);
 

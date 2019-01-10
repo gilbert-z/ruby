@@ -9,5 +9,5 @@ public interface TcommentService {
 
     List<Vcomment> selectBySid(Integer sid);
 
-    int insert(Tcomment tcomment);
+    int insert(Tcomment tcomment,String token);
 }
