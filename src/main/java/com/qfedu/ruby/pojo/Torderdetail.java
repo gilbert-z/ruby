@@ -11,6 +11,8 @@ public class Torderdetail {
 
     private Integer num;
 
+    private Integer flag;
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +51,13 @@ public class Torderdetail {
 
     public void setNum(Integer num) {
         this.num = num;
+    }
+
+    public Integer getFlag() {
+        return flag;
+    }
+
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 }

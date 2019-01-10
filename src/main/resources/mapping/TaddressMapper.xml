@@ -5,10 +5,12 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
     <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, uid, address, flag
+    id, uid, address, phone, name, flag
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,9 +24,9 @@
   </delete>
   <insert id="insert" parameterType="com.qfedu.ruby.pojo.Taddress">
     insert into t_address (id, uid, address, 
-      flag)
+      phone, name, flag)
     values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
-      #{flag,jdbcType=INTEGER})
+      #{phone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Taddress">
     insert into t_address
@@ -37,6 +39,12 @@
       </if>
       <if test="address != null">
         address,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="name != null">
+        name,
       </if>
       <if test="flag != null">
         flag,
@@ -52,6 +60,12 @@
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
       <if test="flag != null">
         #{flag,jdbcType=INTEGER},
       </if>
@@ -66,6 +80,12 @@
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
       </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
       <if test="flag != null">
         flag = #{flag,jdbcType=INTEGER},
       </if>
@@ -76,6 +96,8 @@
     update t_address
     set uid = #{uid,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

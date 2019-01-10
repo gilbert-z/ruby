@@ -4,6 +4,8 @@ import com.qfedu.ruby.pojo.Tcomment;
 import com.qfedu.ruby.service.TcommentService;
 import com.qfedu.ruby.util.ResultBean;
 import com.qfedu.ruby.util.ResultUtil;
+import com.qfedu.ruby.util.token.TokenParse;
+import com.qfedu.ruby.util.token.TokenUtil;
 import com.qfedu.ruby.vo.Vcomment;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -43,15 +45,24 @@ public class CommentController {
     @ApiOperation(value = "添加分享评论接口",httpMethod = "POST",notes = "参数是整个评论表类，uid:用户id,sid:分享id")
     @PostMapping("/cs/insert.do")
     @CrossOrigin
-    public ResultBean insert(Tcomment tcomment){
-        Date date = new Date();
-        tcomment.setCreatetime(date);
-        ResultBean rb = new ResultBean();
-        if(cs.insert(tcomment) > 0){
+    public ResultBean insert(Tcomment tcomment,String token){
 
-            return ResultUtil.SUCCESS(null,"成功啦");
-        }else{
-            return ResultUtil.ERROR();
+        if (token!=null&&token!=""){
+
+            Date date = new Date();
+            tcomment.setCreatetime(date);
+            tcomment.setViewid(TokenParse.getUid(token));
+
+            if(cs.insert(tcomment) > 0){
+
+                return ResultUtil.OK();
+            }else{
+                return ResultUtil.ERROR();
+            }
+        } else {
+
+            return ResultUtil.setERROR("请登录");
         }
+
     }
 }

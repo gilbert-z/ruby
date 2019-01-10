@@ -6,12 +6,13 @@
     <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
     <result column="gimg" jdbcType="VARCHAR" property="gimg" />
     <result column="gprice" jdbcType="INTEGER" property="gprice" />
+    <result column="gtype" jdbcType="INTEGER" property="gtype" />
     <result column="gcount" jdbcType="INTEGER" property="gcount" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, goodsname, gimg, gprice, gcount, flag, createtime
+    id, goodsname, gimg, gprice, gtype, gcount, flag, createtime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -25,11 +26,11 @@
   </delete>
   <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tgoods">
     insert into t_goods (id, goodsname, gimg, 
-      gprice, gcount, flag, 
-      createtime)
+      gprice, gtype, gcount, 
+      flag, createtime)
     values (#{id,jdbcType=INTEGER}, #{goodsname,jdbcType=VARCHAR}, #{gimg,jdbcType=VARCHAR}, 
-      #{gprice,jdbcType=INTEGER}, #{gcount,jdbcType=INTEGER}, #{flag,jdbcType=INTEGER}, 
-      #{createtime,jdbcType=TIMESTAMP})
+      #{gprice,jdbcType=INTEGER}, #{gtype,jdbcType=INTEGER}, #{gcount,jdbcType=INTEGER}, 
+      #{flag,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tgoods">
     insert into t_goods
@@ -45,6 +46,9 @@
       </if>
       <if test="gprice != null">
         gprice,
+      </if>
+      <if test="gtype != null">
+        gtype,
       </if>
       <if test="gcount != null">
         gcount,
@@ -69,6 +73,9 @@
       <if test="gprice != null">
         #{gprice,jdbcType=INTEGER},
       </if>
+      <if test="gtype != null">
+        #{gtype,jdbcType=INTEGER},
+      </if>
       <if test="gcount != null">
         #{gcount,jdbcType=INTEGER},
       </if>
@@ -92,6 +99,9 @@
       <if test="gprice != null">
         gprice = #{gprice,jdbcType=INTEGER},
       </if>
+      <if test="gtype != null">
+        gtype = #{gtype,jdbcType=INTEGER},
+      </if>
       <if test="gcount != null">
         gcount = #{gcount,jdbcType=INTEGER},
       </if>
@@ -109,6 +119,7 @@
     set goodsname = #{goodsname,jdbcType=VARCHAR},
       gimg = #{gimg,jdbcType=VARCHAR},
       gprice = #{gprice,jdbcType=INTEGER},
+      gtype = #{gtype,jdbcType=INTEGER},
       gcount = #{gcount,jdbcType=INTEGER},
       flag = #{flag,jdbcType=INTEGER},
       createtime = #{createtime,jdbcType=TIMESTAMP}

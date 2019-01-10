@@ -1,7 +1,5 @@
 package com.qfedu.ruby.dao;
 
-import com.qfedu.ruby.pojo.Taddress;
-
 public interface TaddressMapper {
     int deleteByPrimaryKey(Integer id);
 

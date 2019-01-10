@@ -11,6 +11,8 @@ public class Tgoods {
 
     private Integer gprice;
 
+    private Integer gtype;
+
     private Integer gcount;
 
     private Integer flag;
@@ -47,6 +49,14 @@ public class Tgoods {
 
     public void setGprice(Integer gprice) {
         this.gprice = gprice;
+    }
+
+    public Integer getGtype() {
+        return gtype;
+    }
+
+    public void setGtype(Integer gtype) {
+        this.gtype = gtype;
     }
 
     public Integer getGcount() {
