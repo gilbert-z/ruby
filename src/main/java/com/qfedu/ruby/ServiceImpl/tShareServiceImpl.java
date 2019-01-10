@@ -30,4 +30,9 @@ public class tShareServiceImpl implements tShareService {
     public Vtshare selectById(Integer id) {
         return tm.selectById(id);
     }
+
+    @Override
+    public int updateFlag(Integer id) {
+        return tm.updateFlag(id);
+    }
 }

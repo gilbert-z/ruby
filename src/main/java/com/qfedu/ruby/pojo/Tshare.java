@@ -17,7 +17,7 @@ public class Tshare {
 
     private Integer lookcount;
 
-    private String flag;
+    private Integer flag;
 
     private String content;
 
@@ -34,7 +34,7 @@ public class Tshare {
     }
 
     public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
+        this.title = title;
     }
 
     public String getPicture() {
@@ -42,7 +42,7 @@ public class Tshare {
     }
 
     public void setPicture(String picture) {
-        this.picture = picture == null ? null : picture.trim();
+        this.picture = picture;
     }
 
     public Date getCreatetime() {
@@ -77,12 +77,12 @@ public class Tshare {
         this.lookcount = lookcount;
     }
 
-    public String getFlag() {
+    public Integer getFlag() {
         return flag;
     }
 
-    public void setFlag(String flag) {
-        this.flag = flag == null ? null : flag.trim();
+    public void setFlag(Integer flag) {
+        this.flag = flag;
     }
 
     public String getContent() {
@@ -90,6 +90,6 @@ public class Tshare {
     }
 
     public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+        this.content = content;
     }
 }

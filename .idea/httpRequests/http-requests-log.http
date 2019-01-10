@@ -1,3 +1,59 @@
+GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T024609.200.json
+
+###
+
+GET http://localhost:8081/emailcode?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T024526.200.json
+
+###
+
+POST http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T111256.200.json
+
+###
+
+POST http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T111243.200.json
+
+###
+
+GET http://localhost:8081/ts/updateFlag.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T111220.405.json
+
+###
+
+GET http://localhost:8081/ts/selectById.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T102413.200.json
+
+###
+
+GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-10T102346.200.json
+
+###
+
 GET http://localhost:8081/ts/selectAll.do?sid=1&id=1&id=1&id=1&id=1&id=2&id=2&id=2&id=1&id=1&id=1&id=1&id=1&id=1
 Accept: */*
 Cache-Control: no-cache
@@ -325,62 +381,6 @@ Accept: */*
 Cache-Control: no-cache
 
 <> 2019-01-09T024919.200.json
-
-###
-
-GET http://localhost:8081/emailcode?email=274138089@qq.com
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-09T024646.200.json
-
-###
-
-GET http://localhost:8081/emailcode?email=274138089@qq.com
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T101636.200.json
-
-###
-
-GET http://localhost:8081/emailcode
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T101519.500.json
-
-###
-
-GET http://localhost:8081/emailcode
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T100855.500.json
-
-###
-
-GET http://localhost:8081/ts/selectAll.do
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T074026.200.json
-
-###
-
-GET http://localhost:8081/ts/selectAll.do
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T073806.200.json
-
-###
-
-GET http://localhost:8081/ts/selectAll.do
-Accept: */*
-Cache-Control: no-cache
-
-<> 2019-01-08T073723.200.json
 
 ###
 

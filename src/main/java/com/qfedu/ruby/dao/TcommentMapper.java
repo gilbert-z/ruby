@@ -12,8 +12,6 @@ import java.util.List;
 public interface TcommentMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Tcomment record);
-
     int insertSelective(Tcomment record);
 
     Tcomment selectByPrimaryKey(Integer id);
@@ -23,4 +21,6 @@ public interface TcommentMapper {
     int updateByPrimaryKey(Tcomment record);
 
     List<Vcomment> selectBySid(Integer sid);
+
+    int insert(Tcomment record);
 }

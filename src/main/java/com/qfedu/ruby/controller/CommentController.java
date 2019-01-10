@@ -1,5 +1,6 @@
 package com.qfedu.ruby.controller;
 
+import com.qfedu.ruby.pojo.Tcomment;
 import com.qfedu.ruby.service.TcommentService;
 import com.qfedu.ruby.util.ResultBean;
 import com.qfedu.ruby.util.ResultUtil;
@@ -9,8 +10,12 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.xml.crypto.Data;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Api(value = "发现的精品评论模块",tags = "发现中每个分享的评论类表")
@@ -20,7 +25,7 @@ public class CommentController {
     @Autowired
     private TcommentService cs;
 
-    @ApiOperation(value = "每个分享评论接口",httpMethod = "GET",notes = "参数是根据分享id查询")
+    @ApiOperation(value = "每个分享中评论的接口",httpMethod = "GET",notes = "参数是根据分享id查询")
     @GetMapping("/cs/selectBySid.do")
     @CrossOrigin
     public ResultBean selectBySid(Integer sid){
@@ -29,8 +34,24 @@ public class CommentController {
             List<Vcomment> list = cs.selectBySid(sid);
             rb = ResultUtil.SUCCESS(list,"成功啦");
         }else{
-            ResultUtil.ERROR();
+            return ResultUtil.ERROR();
         }
         return rb;
+    }
+
+
+    @ApiOperation(value = "添加分享评论接口",httpMethod = "POST",notes = "参数是整个评论表类，uid:用户id,sid:分享id")
+    @PostMapping("/cs/insert.do")
+    @CrossOrigin
+    public ResultBean insert(Tcomment tcomment){
+        Date date = new Date();
+        tcomment.setCreatetime(date);
+        ResultBean rb = new ResultBean();
+        if(cs.insert(tcomment) > 0){
+
+            return ResultUtil.SUCCESS(null,"成功啦");
+        }else{
+            return ResultUtil.ERROR();
+        }
     }
 }

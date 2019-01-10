@@ -1,6 +1,7 @@
 package com.qfedu.ruby.ServiceImpl;
 
 import com.qfedu.ruby.dao.TcommentMapper;
+import com.qfedu.ruby.pojo.Tcomment;
 import com.qfedu.ruby.service.TcommentService;
 import com.qfedu.ruby.vo.Vcomment;
 
@@ -17,5 +18,10 @@ public class TcommentServiceImpl implements TcommentService {
     @Override
     public List<Vcomment> selectBySid(Integer sid) {
         return cm.selectBySid(sid);
+    }
+
+    @Override
+    public int insert(Tcomment tcomment) {
+        return cm.insert(tcomment);
     }
 }

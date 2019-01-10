@@ -13,7 +13,7 @@ public class Vtshare {
 
     private Integer lookcount;
 
-    private String flag;
+    private Integer flag;
 
     private String content;
 
@@ -63,11 +63,11 @@ public class Vtshare {
         this.lookcount = lookcount;
     }
 
-    public String getFlag() {
+    public Integer getFlag() {
         return flag;
     }
 
-    public void setFlag(String flag) {
+    public void setFlag(Integer flag) {
         this.flag = flag;
     }
 

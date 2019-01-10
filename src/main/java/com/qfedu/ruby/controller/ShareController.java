@@ -78,4 +78,17 @@ public class ShareController {
            return ResultUtil.ERROR();
         }
     }
+
+    @ApiOperation(value = "收藏次数接口",httpMethod = "POST",notes = "参数是查看的分享的id,点击收藏调用，收藏次数+1")
+    @PostMapping("/ts/updateFlag.do")
+    @CrossOrigin
+    public ResultBean updateFlag(Integer id) {
+        ResultBean rb = new ResultBean();
+        if(ts.updateFlag(id) > 0) {
+            rb = ResultUtil.SUCCESS(null,"收藏成功");
+        }else{
+            ResultUtil.ERROR();
+        }
+        return rb;
+    }
 }

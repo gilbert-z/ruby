@@ -12,4 +12,6 @@ public interface tShareService {
     int updateLookcount(Tshare tshare);
 
     Vtshare selectById(Integer id);
+
+    int updateFlag(Integer id);
 }
