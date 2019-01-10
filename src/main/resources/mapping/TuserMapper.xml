@@ -125,4 +125,9 @@
     from t_user u where u.email = #{email,jdbcType=VARCHAR} and u.password = #{password,jdbcType=VARCHAR}
   </select>
 
+  <select id="selectUserByEmail" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    from t_user u where u.email = #{email,jdbcType=VARCHAR}
+  </select>
 </mapper>

@@ -24,4 +24,8 @@ public interface TuserMapper {
     int selectByEmail(String email);
 
     Tuser selectByemailAndPass(@Param("email") String email,@Param("password") String password);
+
+    Tuser selectUserByEmail(String email);
+
+
 }
