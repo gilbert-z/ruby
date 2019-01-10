@@ -55,4 +55,7 @@
     set brandname = #{brandname,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllName" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand" resultType="class">
+  select * from  t_goodsbrand
+  </select>
 </mapper>

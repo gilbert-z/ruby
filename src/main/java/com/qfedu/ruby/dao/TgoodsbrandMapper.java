@@ -2,6 +2,8 @@ package com.qfedu.ruby.dao;
 
 import com.qfedu.ruby.pojo.Tgoodsbrand;
 
+import java.util.List;
+
 public interface TgoodsbrandMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,8 @@ public interface TgoodsbrandMapper {
     int updateByPrimaryKeySelective(Tgoodsbrand record);
 
     int updateByPrimaryKey(Tgoodsbrand record);
+
+    List<Tgoodsbrand> selectAllName();
+
+
 }
