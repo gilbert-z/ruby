@@ -101,4 +101,36 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_address
+    where uid = #{uid,jdbcType=INTEGER} order by flag asc
+  </select>
+
+
+  <update id="updateByFlag" >
+    update t_address
+    set
+      flag = 1
+    where uid = #{uid,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateFlagByUid" >
+    update t_address
+    set
+      flag = 0
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectFlagByUid"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_address
+    where uid = #{uid,jdbcType=INTEGER} order by flag asc  LIMIT 0,1
+  </select>
 </mapper>
