@@ -1,6 +1,7 @@
 package com.qfedu.ruby.service;
 
 import com.qfedu.ruby.pojo.Tshare;
+import com.qfedu.ruby.util.ResultBean;
 import com.qfedu.ruby.vo.Vtshare;
 
 import java.util.List;
@@ -14,4 +15,6 @@ public interface tShareService {
     Vtshare selectById(Integer id);
 
     int updateFlag(Integer id);
+
+    ResultBean selectShareGoods(Integer id);
 }

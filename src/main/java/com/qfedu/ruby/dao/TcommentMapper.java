@@ -23,6 +23,6 @@ public interface TcommentMapper {
 
     List<Vcomment> selectBySid(Integer sid);
 
-    @Insert("insert into t_comment(viewid, sid, createtime, content, flag) values(1,#{sid}now(),#{content},#{flag})")
+    @Insert("insert into t_comment(viewid, sid, createtime, content, flag) values(#{viewid},#{sid},now(),#{content},#{flag})")
     int insert1(Tcomment record);
 }

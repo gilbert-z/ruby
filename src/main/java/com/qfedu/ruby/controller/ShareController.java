@@ -91,4 +91,12 @@ public class ShareController {
         }
         return rb;
     }
+
+
+    @ApiOperation(value = "分享中类似商品展示接口",httpMethod = "GET",notes = "参数是分享的id")
+    @GetMapping("/cs/selectShareGoods.do")
+    @CrossOrigin
+    public ResultBean selectShareGoods(Integer id) {
+        return ts.selectShareGoods(id);
+    }
 }

@@ -24,9 +24,8 @@ public class TcommentServiceImpl implements TcommentService {
 
     @Override
     public int insert(Tcomment tcomment,String token) {
-        System.out.println("________!!!!_____");
-        int uid = TokenUtil.parseToken(token).getId();
-        System.out.println("~~~~~~~~uid"+uid);
+
+        int uid = TokenParse.getUid(token);
         tcomment.setViewid(uid);
         return cm.insert1(tcomment);
     }
