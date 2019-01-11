@@ -8,6 +8,15 @@
     <result column="num" jdbcType="INTEGER" property="num" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
   </resultMap>
+
+  <resultMap id="BaseResultMap1" type="com.qfedu.ruby.vo.Vcart">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="gimg" jdbcType="VARCHAR" property="gimg" />
+    <result column="gprice" jdbcType="INTEGER" property="gprice" />
+  </resultMap>
   <sql id="Base_Column_List">
     id, gid, uid, num, createtime
   </sql>
@@ -27,7 +36,7 @@
     values (#{id,jdbcType=INTEGER}, #{gid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, 
       #{num,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tcart">
+  <insert id="insertCart" parameterType="com.qfedu.ruby.pojo.Tcart">
     insert into t_cart
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -90,4 +99,32 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCart" parameterType="int" resultMap="BaseResultMap1">
+    select c.uid,c.num,c.createtime,g.goodsname,g.gimg,g.gprice from t_cart c
+    inner join t_goods g
+    on c.gid=g.id
+    inner join t_user u
+    on c.uid=u.id
+    where c.uid=#{uid}
+  </select>
+
+  <select id="selectbygid" resultMap="BaseResultMap">
+
+    select * from t_cart where gid = #{gid} and uid = #{uid}
+
+  </select>
+
+  <update id="updatecounttt">
+
+    update t_cart set t_cart.num =#{num} where uid = #{uid} and gid = #{gid}
+
+  </update>
+
+  <update id="updatecount">
+
+    update t_cart set t_cart.num =#{num} where id = #{id}
+
+  </update>
+
 </mapper>

@@ -22,6 +22,13 @@
     <result column="lookcount" jdbcType="INTEGER" property="lookcount" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
+  <resultMap id="BaseResultMap2" type="com.qfedu.ruby.vo.VshareGoods">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="typeid" jdbcType="VARCHAR" property="typeid" />
+    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
+    <result column="gimg" jdbcType="TIMESTAMP" property="gimg" />
+    <result column="gprice" jdbcType="VARCHAR" property="gprice" />
+  </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.qfedu.ruby.pojo.Tshare">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
@@ -193,5 +200,10 @@
     update t_share set flag=flag+1 where id=#{id}
   </update>
 
-
+  <select id="selectShareGoods" parameterType="java.lang.Integer" resultMap="BaseResultMap2">
+    select s.id,s.typeid,g.goodsname,g.gimg,g.gprice from t_share s
+    inner join t_goods g
+    on s.typeid=g.gtype
+    where s.id=#{id}
+  </select>
 </mapper>
