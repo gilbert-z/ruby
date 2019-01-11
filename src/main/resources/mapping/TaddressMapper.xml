@@ -23,10 +23,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.qfedu.ruby.pojo.Taddress">
-    insert into t_address (id, uid, address, 
-      phone, name, flag)
-    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{flag,jdbcType=INTEGER})
+    insert into t_address (uid, address,
+      phone, name)
+    values (#{uid,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
+      #{phone,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Taddress">
     insert into t_address

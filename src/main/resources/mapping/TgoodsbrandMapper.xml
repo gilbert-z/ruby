@@ -55,9 +55,10 @@
     set brandname = #{brandname,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="selectAllName" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand" resultType="class">
+<select id="selectAllName" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand" resultMap="BaseResultMap">
   select * from  t_goodsbrand
   </select>
+
     <select id="selectByBid" resultType="map">
        select * from t_goods where id in (select gid from t_brand_goods where bid={bid})
     </select>

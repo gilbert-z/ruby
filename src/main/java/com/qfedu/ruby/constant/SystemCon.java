@@ -15,7 +15,7 @@ public class SystemCon {
     public static final String POST="POST";
 
     //需要用到秘钥  AES
-    public static final String TOKENKEY="C0sD4YewWv6mGqWCD3GXKg==";
+    public static final String TOKENKEY="esVw/yXVjmLDghKt+W6J5w==";
     public static final String PASSKEY="xQyfQmWAlLQCT9Y5Gxh2IQ==";
 
     //token对应的redis的key
