@@ -58,4 +58,7 @@
   <select id="selectAllName" parameterType="com.qfedu.ruby.pojo.Tgoodsbrand" resultType="class">
   select * from  t_goodsbrand
   </select>
+    <select id="selectByBid" resultType="map">
+       select * from t_goods where id in (select gid from t_brand_goods where bid={bid})
+    </select>
 </mapper>

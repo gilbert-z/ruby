@@ -14,4 +14,5 @@ public interface TcartMapper {
     int updateByPrimaryKeySelective(Tcart record);
 
     int updateByPrimaryKey(Tcart record);
+
 }

@@ -1,5 +1,6 @@
 package com.qfedu.ruby.dao;
 
+import com.qfedu.ruby.pojo.Tgoods;
 import com.qfedu.ruby.pojo.Tgoodsbrand;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public interface TgoodsbrandMapper {
     int updateByPrimaryKey(Tgoodsbrand record);
 
     List<Tgoodsbrand> selectAllName();
+
+    Tgoods selectByBid(Integer bid);
 
 
 }

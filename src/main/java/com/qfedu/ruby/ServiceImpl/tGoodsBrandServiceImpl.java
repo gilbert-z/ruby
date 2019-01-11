@@ -1,6 +1,7 @@
 package com.qfedu.ruby.ServiceImpl;
 
 import com.qfedu.ruby.dao.TgoodsbrandMapper;
+import com.qfedu.ruby.pojo.Tgoods;
 import com.qfedu.ruby.pojo.Tgoodsbrand;
 import com.qfedu.ruby.service.tGoodsBrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,10 @@ public class tGoodsBrandServiceImpl  implements tGoodsBrandService {
     @Override
     public List<Tgoodsbrand> selectAll() {
         return tbm.selectAllName();
+    }
+
+    @Override
+    public Tgoods selectById(Integer bid) {
+        return tbm.selectByBid(bid);
     }
 }

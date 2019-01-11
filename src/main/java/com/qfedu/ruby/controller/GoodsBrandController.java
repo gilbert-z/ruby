@@ -1,5 +1,6 @@
 package com.qfedu.ruby.controller;
 
+import com.qfedu.ruby.pojo.Tgoods;
 import com.qfedu.ruby.pojo.Tgoodsbrand;
 import com.qfedu.ruby.service.tGoodsBrandService;
 import com.qfedu.ruby.util.ResultBean;
@@ -20,12 +21,12 @@ public class GoodsBrandController {
     private tGoodsBrandService tbs;
     @ApiOperation(value = "选购品牌接口",httpMethod = "GET",notes = "查询所有品牌")
     @CrossOrigin
-    @GetMapping("/tbm/selectAll.do")
+    @GetMapping("/tbs/selectAll.do")
     public ResultBean selectAll(){
         ResultBean rb = new ResultBean();
         if(tbs.selectAll() != null){
             List<Tgoodsbrand> list = tbs.selectAll();
-            rb = ResultUtil.SUCCESS(list,"sdsds");
+            rb = ResultUtil.SUCCESS(list,"chenggong");
         }else{
             ResultUtil.ERROR();
         }
@@ -33,6 +34,17 @@ public class GoodsBrandController {
         return rb;
     }
 
+    @ApiOperation(value = "点击品牌显示对应商品列表",httpMethod = "GET",notes = "参数是品牌id")
+    @CrossOrigin
+    @GetMapping("/tbs/goodsList.do")
+    public ResultBean goodsList(Integer bid) {
+        if (tbs.selectById(bid)!=null){
+            Tgoods tgoods = tbs.selectById(bid);
+            return ResultUtil.SUCCESS(tgoods,"chenggong");
+        }else{
+            return ResultUtil.ERROR();
+        }
+    }
 
 
 }
