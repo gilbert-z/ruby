@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class TcartServcieImpl implements TcartService {
@@ -24,7 +25,7 @@ public class TcartServcieImpl implements TcartService {
         //int uid = TokenParse.getUid(token);
         Tcart tcart = new Tcart();
         //tcart.setUid(uid);
-        Integer uid = Integer.valueOf(token);
+        Integer uid = TokenParse.getUid(token);
         tcart.setUid(uid);
         if(tcartMapper.selectCart(uid) != null){
             List<Vcart> list = tcartMapper.selectCart(uid);
@@ -38,9 +39,11 @@ public class TcartServcieImpl implements TcartService {
     }
 
     @Override
-    public ResultBean addToCard(Tcart tcart) {
+    public ResultBean addToCard(Tcart tcart, String token) {
+        Integer uid = TokenParse.getUid(token);
+        tcart.setUid(uid);
         int gid = tcart.getGid();
-        int uid = tcart.getUid();
+        //int uid = tcart.getUid();
         Tcart cart = tcartMapper.selectbygid(gid,uid);
         if(cart != null){
             int rnum = tcart.getNum();
@@ -58,6 +61,18 @@ public class TcartServcieImpl implements TcartService {
     public ResultBean updateCount(Integer num, Integer id) {
 
         return tcartMapper.updatecount(num,id) > 0 ? ResultUtil.OK() : ResultUtil.ERROR();
+    }
+
+    @Override
+    public ResultBean buying(Tcart tcart, String token) {
+        Integer uid = TokenParse.getUid(token);
+        tcart.setUid(uid);
+        if(tcartMapper.insertSelective(tcart) > 0) {
+            Map map = tcartMapper.selectbyid(tcart.getGid(),uid);
+            return ResultUtil.SUCCESS(map,"chenggong");
+        }else {
+            return ResultUtil.ERROR();
+        }
     }
 
 /*    public ResultBean selectCart(Integer uid) {

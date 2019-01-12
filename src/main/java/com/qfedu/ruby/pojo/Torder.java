@@ -1,6 +1,9 @@
 package com.qfedu.ruby.pojo;
 
+import com.qfedu.ruby.vo.Vorder;
+
 import java.util.Date;
+import java.util.List;
 
 public class Torder {
     private Integer id;
@@ -16,6 +19,26 @@ public class Torder {
     private Date createtime;
 
     private Integer flag;
+
+    private Taddress taddress;
+
+    public Taddress getTaddress() {
+        return taddress;
+    }
+
+    public void setTaddress(Taddress taddress) {
+        this.taddress = taddress;
+    }
+
+    private List<Vorder> Vorders;
+
+    public List<Vorder> getVorders() {
+        return Vorders;
+    }
+
+    public void setVorders(List<Vorder> vorders) {
+        Vorders = vorders;
+    }
 
     public Integer getId() {
         return id;

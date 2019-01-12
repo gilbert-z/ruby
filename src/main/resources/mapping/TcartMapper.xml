@@ -69,7 +69,7 @@
         #{num,jdbcType=INTEGER},
       </if>
       <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+        #{now(),jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -127,4 +127,50 @@
 
   </update>
 
+  <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tcart">
+  insert into t_cart
+  <trim prefix="(" suffix=")" suffixOverrides=",">
+    <if test="id != null">
+      id,
+    </if>
+    <if test="gid != null">
+      gid,
+    </if>
+    <if test="uid != null">
+      uid,
+    </if>
+    <if test="num != null">
+      num,
+    </if>
+    <if test="createtime != null">
+      createtime,
+    </if>
+  </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="gid != null">
+        #{gid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{now(),jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="selectbyid" resultType="java.util.Map">
+    select c.id,c.createtime,g.id,c.num,g.goodsname,g.gprice,g.gimg
+    from t_goods g
+    left join t_cart c
+    on g.id = c.gid
+    where gid = #{gid} and uid = #{uid} order by g.id desc limit 0,1
+
+  </select>
 </mapper>

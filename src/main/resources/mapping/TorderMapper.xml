@@ -10,6 +10,29 @@
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="flag" jdbcType="INTEGER" property="flag" />
   </resultMap>
+
+  <resultMap id="BaseResultMap1" type="com.qfedu.ruby.pojo.Torder">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="money" jdbcType="INTEGER" property="money" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="addressid" jdbcType="INTEGER" property="addressid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="flag" jdbcType="INTEGER" property="flag" />
+    <collection property="Vorders" ofType="com.qfedu.ruby.vo.Vorder">
+
+      <!-- 指定list中每一个order对象和查询出来的结果集字段的绑定 -->
+      <id column="gid" property="gid" />
+      <result column="price" property="price" />
+      <result column="num" property="num" />
+      <result column="goodsname" property="goodsname" />
+      <result column="gimg" property="gimg" />
+      <result column="netweight" property="netweight" />
+
+
+
+    </collection>
+  </resultMap>
   <sql id="Base_Column_List">
     id, uid, money, msg, addressid, createtime, flag
   </sql>
@@ -114,4 +137,16 @@
       flag = #{flag,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectOrder" parameterType="java.lang.Integer" resultMap="BaseResultMap1">
+    select o.id,o.addressid,o.uid,o.money,o.msg,o.createtime,od.gid,od.price,od.num,g.goodsname,g.gimg,gd.netweight from t_order o
+    inner join t_orderdetail od
+    on o.id=od.oid
+    inner join t_goods g
+    on od.gid=g.id
+    left join t_goodsdetail gd
+    on g.id=gd.gid
+    where o.id=#{id}
+  </select>
+
 </mapper>

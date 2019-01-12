@@ -9,7 +9,9 @@ public interface TcartService {
 
     //ResultBean selectCart(Integer uid);
 
-    public ResultBean addToCard(Tcart tcard);
+    public ResultBean addToCard(Tcart tcard,String token);
 
     ResultBean updateCount(Integer count,Integer id);
+
+    public ResultBean buying(Tcart tcart, String token);
 }
