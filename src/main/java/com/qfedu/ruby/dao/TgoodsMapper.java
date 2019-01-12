@@ -4,6 +4,8 @@ import com.qfedu.ruby.pojo.Tgoods;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Mapper
 @Component("TgoodsMapper")
 public interface TgoodsMapper {
@@ -20,4 +22,6 @@ public interface TgoodsMapper {
     int updateByPrimaryKey(Tgoods record);
     //查询商品详情
     Tgoods selectGoodsDetail(Integer gid);
+
+    List<Tgoods> selectByType(Integer gtype);
 }

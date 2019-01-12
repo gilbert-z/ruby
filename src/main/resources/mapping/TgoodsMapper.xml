@@ -163,4 +163,12 @@ t_goods g LEFT JOIN t_goodsdetail d on g.id=d.gid
 LEFT JOIN t_goodsbrand b on d.brandid=b.id
 LEFT JOIN t_goodsimg m on g.id=m.gid where g.id=#{gid,jdbcType=INTEGER}
   </select>
+
+
+    <select id="selectByType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        where gtype = #{gtype,jdbcType=INTEGER}
+    </select>
 </mapper>

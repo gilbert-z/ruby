@@ -9,6 +9,8 @@ import com.qfedu.ruby.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GoodsServiceImpl implements GoodsService {
 
@@ -22,6 +24,17 @@ public class GoodsServiceImpl implements GoodsService {
             return ResultUtil.setERROR("已下架");
         }else {
             return ResultUtil.SUCCESS(goods, SystemCon.OK);
+        }
+    }
+    //根据类型返回商品列表
+    @Override
+    public ResultBean showGoodslist(Integer gtype) {
+
+        List<Tgoods> goods= goodsMapper.selectByType(gtype);
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
         }
     }
 }
