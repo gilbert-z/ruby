@@ -8,4 +8,20 @@ public interface GoodsService {
     ResultBean showGoodsDetail(Integer gid);
 
     ResultBean showGoodslist(Integer gtype);
+
+    /**
+     * 展示便宜的
+     * @return
+     */
+    ResultBean showSale();
+    /**
+     *展示贵的
+     * @return
+     */
+    ResultBean showExpensive();
+    /**
+     *展示新的
+     * @return
+     */
+    ResultBean showNewGoods();
 }

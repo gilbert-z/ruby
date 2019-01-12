@@ -171,4 +171,26 @@ LEFT JOIN t_goodsimg m on g.id=m.gid where g.id=#{gid,jdbcType=INTEGER}
         from t_goods
         where gtype = #{gtype,jdbcType=INTEGER}
     </select>
+
+    <select id="selectByAsc" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        ORDER BY gprice ASC LIMIT 0,10
+    </select>
+
+
+    <select id="selectByDesc" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        ORDER BY gprice DESC LIMIT 0,10
+    </select>
+
+    <select id="selectByDate" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        ORDER BY createtime Desc LIMIT 0,10
+    </select>
 </mapper>

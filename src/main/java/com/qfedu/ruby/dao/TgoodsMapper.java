@@ -23,5 +23,29 @@ public interface TgoodsMapper {
     //查询商品详情
     Tgoods selectGoodsDetail(Integer gid);
 
+    /**
+     * 根据类型查询
+     * @param gtype
+     * @return
+     */
     List<Tgoods> selectByType(Integer gtype);
+    /**
+     * 低价查询
+     *
+     * @return
+     */
+    List<Tgoods> selectByAsc();
+    /**
+     * 高价查询
+     *
+     * @return
+     */
+    List<Tgoods> selectByDesc();
+    /**
+     * 新品查询
+     * @param
+     * @return
+     */
+    List<Tgoods> selectByDate();
+
 }

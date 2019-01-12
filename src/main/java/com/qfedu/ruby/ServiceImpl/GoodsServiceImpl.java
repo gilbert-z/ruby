@@ -37,4 +37,34 @@ public class GoodsServiceImpl implements GoodsService {
             return ResultUtil.SUCCESS(goods,SystemCon.OK);
         }
     }
+
+    @Override
+    public ResultBean showSale() {
+        List<Tgoods> goods= goodsMapper.selectByAsc();
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
+        }
+    }
+
+    @Override
+    public ResultBean showExpensive() {
+        List<Tgoods> goods= goodsMapper.selectByDesc();
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
+        }
+    }
+
+    @Override
+    public ResultBean showNewGoods() {
+        List<Tgoods> goods= goodsMapper.selectByDate();
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
+        }
+    }
 }
