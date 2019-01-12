@@ -1,5 +1,6 @@
 package com.qfedu.ruby.controller;
 
+import com.qfedu.ruby.pojo.Tuser;
 import com.qfedu.ruby.service.UserService;
 import com.qfedu.ruby.util.ResultBean;
 import com.qfedu.ruby.util.ResultUtil;
@@ -130,6 +131,18 @@ public class UserController {
             return ResultUtil.setERROR("请检查登录状态");
         } else {
             return userService.userInfo(token);
+        }
+    }
+
+
+    @ApiOperation(value = "修改用户详情",httpMethod = "GET",notes = "传来user对象")
+    @GetMapping("user/updateinfo.do")
+    ResultBean updateInfo(@Param("user")Tuser user) {
+
+        if (user==null){
+            return ResultUtil.setERROR("请输入信息");
+        } else {
+            return userService.updateUser(user);
         }
     }
 

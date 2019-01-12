@@ -7,6 +7,7 @@ spring:
     url: jdbc:mysql://localhost:3306/ruby?serverTimezone=GMT&characterEncoding=UTF-8
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   mail:
     default-encoding: utf-8
     host: smtp.163.com
@@ -17,3 +18,4 @@ spring:
 mybatis:
   mapper-locations: classpath:mapping/*.xml
   type-aliases-package: com.qfedu.ruby.pojo
+

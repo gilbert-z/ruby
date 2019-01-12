@@ -75,6 +75,7 @@ public class UserServiceImpl implements UserService {
                 Tuser user = new Tuser();
                 user.setEmail(email);
                 user.setPassword(password);
+                user.setHeadimg("http://img4.imgtn.bdimg.com/it/u=3380605001,343852451&fm=26&gp=0.jpg");
                 return userMapper.insert(user)==1?ResultUtil.setOK(SystemCon.OK):ResultUtil.setERROR(SystemCon.ERROR);
             } else {
                 return ResultUtil.setERROR("验证码错误");
@@ -152,10 +153,12 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.updateByPrimaryKeySelective(user)==1?ResultUtil.OK():ResultUtil.setERROR("请检查密码格式");
     }
-
+    //更新用户信息
     @Override
     public ResultBean updateUser(Tuser tuser) {
-        return null;
+
+
+        return userMapper.updateByPrimaryKeySelective(tuser)>0?ResultUtil.OK():ResultUtil.ERROR();
     }
 
     @Override

@@ -1,30 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.qfedu.ruby.dao.TgoodsMapper">
-  <resultMap id="BaseResultMap" type="com.qfedu.ruby.pojo.Tgoods">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="goodsname" jdbcType="VARCHAR" property="goodsname" />
-    <result column="gimg" jdbcType="VARCHAR" property="gimg" />
-    <result column="gprice" jdbcType="INTEGER" property="gprice" />
-    <result column="gtype" jdbcType="INTEGER" property="gtype" />
-    <result column="gcount" jdbcType="INTEGER" property="gcount" />
-    <result column="flag" jdbcType="INTEGER" property="flag" />
-    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
-  </resultMap>
-  <sql id="Base_Column_List">
+    <resultMap id="BaseResultMap" type="com.qfedu.ruby.pojo.Tgoods">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="goodsname" jdbcType="VARCHAR" property="goodsname"/>
+        <result column="gimg" jdbcType="VARCHAR" property="gimg"/>
+        <result column="gprice" jdbcType="INTEGER" property="gprice"/>
+        <result column="gtype" jdbcType="INTEGER" property="gtype"/>
+        <result column="gcount" jdbcType="INTEGER" property="gcount"/>
+        <result column="flag" jdbcType="INTEGER" property="flag"/>
+        <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+
+    </resultMap>
+
+    <resultMap id="DetailResultMap" type="com.qfedu.ruby.pojo.Tgoods">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="goodsname" jdbcType="VARCHAR" property="goodsname"/>
+        <result column="gimg" jdbcType="VARCHAR" property="gimg"/>
+        <result column="gprice" jdbcType="INTEGER" property="gprice"/>
+        <result column="gtype" jdbcType="INTEGER" property="gtype"/>
+        <result column="gcount" jdbcType="INTEGER" property="gcount"/>
+        <result column="flag" jdbcType="INTEGER" property="flag"/>
+        <result column="createtime" jdbcType="TIMESTAMP" property="createtime"/>
+
+        <result column="brandname" jdbcType="VARCHAR" property="brandname"/>
+        <result column="netweight" jdbcType="VARCHAR" property="netweight"/>
+        <result column="gualityperiod" jdbcType="VARCHAR" property="gualityperiod"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="content" jdbcType="VARCHAR" property="content"/>
+
+        <collection property="imgs" ofType="com.qfedu.ruby.pojo.Tgoodsimg">
+
+            <!-- 指定list中每一个order对象和查询出来的结果集字段的绑定 -->
+            <id column="imgid" jdbcType="INTEGER" property="imgid"/>
+            <result column="imgid" jdbcType="INTEGER" property="imgid"/>
+            <result column="url" jdbcType="VARCHAR" property="url"/>
+
+
+        </collection>
+
+    </resultMap>
+    <sql id="Base_Column_List">
     id, goodsname, gimg, gprice, gtype, gcount, flag, createtime
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_goods
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_goods
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tgoods">
+    <insert id="insert" parameterType="com.qfedu.ruby.pojo.Tgoods">
     insert into t_goods (id, goodsname, gimg, 
       gprice, gtype, gcount, 
       flag, createtime)
@@ -32,89 +61,89 @@
       #{gprice,jdbcType=INTEGER}, #{gtype,jdbcType=INTEGER}, #{gcount,jdbcType=INTEGER}, 
       #{flag,jdbcType=INTEGER}, #{createtime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tgoods">
-    insert into t_goods
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="goodsname != null">
-        goodsname,
-      </if>
-      <if test="gimg != null">
-        gimg,
-      </if>
-      <if test="gprice != null">
-        gprice,
-      </if>
-      <if test="gtype != null">
-        gtype,
-      </if>
-      <if test="gcount != null">
-        gcount,
-      </if>
-      <if test="flag != null">
-        flag,
-      </if>
-      <if test="createtime != null">
-        createtime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="goodsname != null">
-        #{goodsname,jdbcType=VARCHAR},
-      </if>
-      <if test="gimg != null">
-        #{gimg,jdbcType=VARCHAR},
-      </if>
-      <if test="gprice != null">
-        #{gprice,jdbcType=INTEGER},
-      </if>
-      <if test="gtype != null">
-        #{gtype,jdbcType=INTEGER},
-      </if>
-      <if test="gcount != null">
-        #{gcount,jdbcType=INTEGER},
-      </if>
-      <if test="flag != null">
-        #{flag,jdbcType=INTEGER},
-      </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ruby.pojo.Tgoods">
-    update t_goods
-    <set>
-      <if test="goodsname != null">
-        goodsname = #{goodsname,jdbcType=VARCHAR},
-      </if>
-      <if test="gimg != null">
-        gimg = #{gimg,jdbcType=VARCHAR},
-      </if>
-      <if test="gprice != null">
-        gprice = #{gprice,jdbcType=INTEGER},
-      </if>
-      <if test="gtype != null">
-        gtype = #{gtype,jdbcType=INTEGER},
-      </if>
-      <if test="gcount != null">
-        gcount = #{gcount,jdbcType=INTEGER},
-      </if>
-      <if test="flag != null">
-        flag = #{flag,jdbcType=INTEGER},
-      </if>
-      <if test="createtime != null">
-        createtime = #{createtime,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.qfedu.ruby.pojo.Tgoods">
+    <insert id="insertSelective" parameterType="com.qfedu.ruby.pojo.Tgoods">
+        insert into t_goods
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="goodsname != null">
+                goodsname,
+            </if>
+            <if test="gimg != null">
+                gimg,
+            </if>
+            <if test="gprice != null">
+                gprice,
+            </if>
+            <if test="gtype != null">
+                gtype,
+            </if>
+            <if test="gcount != null">
+                gcount,
+            </if>
+            <if test="flag != null">
+                flag,
+            </if>
+            <if test="createtime != null">
+                createtime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="goodsname != null">
+                #{goodsname,jdbcType=VARCHAR},
+            </if>
+            <if test="gimg != null">
+                #{gimg,jdbcType=VARCHAR},
+            </if>
+            <if test="gprice != null">
+                #{gprice,jdbcType=INTEGER},
+            </if>
+            <if test="gtype != null">
+                #{gtype,jdbcType=INTEGER},
+            </if>
+            <if test="gcount != null">
+                #{gcount,jdbcType=INTEGER},
+            </if>
+            <if test="flag != null">
+                #{flag,jdbcType=INTEGER},
+            </if>
+            <if test="createtime != null">
+                #{createtime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.ruby.pojo.Tgoods">
+        update t_goods
+        <set>
+            <if test="goodsname != null">
+                goodsname = #{goodsname,jdbcType=VARCHAR},
+            </if>
+            <if test="gimg != null">
+                gimg = #{gimg,jdbcType=VARCHAR},
+            </if>
+            <if test="gprice != null">
+                gprice = #{gprice,jdbcType=INTEGER},
+            </if>
+            <if test="gtype != null">
+                gtype = #{gtype,jdbcType=INTEGER},
+            </if>
+            <if test="gcount != null">
+                gcount = #{gcount,jdbcType=INTEGER},
+            </if>
+            <if test="flag != null">
+                flag = #{flag,jdbcType=INTEGER},
+            </if>
+            <if test="createtime != null">
+                createtime = #{createtime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qfedu.ruby.pojo.Tgoods">
     update t_goods
     set goodsname = #{goodsname,jdbcType=VARCHAR},
       gimg = #{gimg,jdbcType=VARCHAR},
@@ -125,4 +154,13 @@
       createtime = #{createtime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+    <select id="selectGoodsDetail" resultMap="DetailResultMap">
+select g.id,g.goodsname,g.gimg,g.gprice,g.gtype,g.gcount,g.flag,g.createtime, b.brandname,d.netweight,d.gualityperiod,d.address,d.content,
+m.id as imgid,m.url
+FROM
+t_goods g LEFT JOIN t_goodsdetail d on g.id=d.gid
+LEFT JOIN t_goodsbrand b on d.brandid=b.id
+LEFT JOIN t_goodsimg m on g.id=m.gid where g.id=#{gid,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -1,7 +1,7 @@
 package com.qfedu.ruby.pojo;
 
 public class Tgoodsimg {
-    private Integer id;
+    private Integer imgid;
 
     private Integer gid;
 
@@ -9,12 +9,12 @@ public class Tgoodsimg {
 
     private Integer flag;
 
-    public Integer getId() {
-        return id;
+    public Integer getImgid() {
+        return imgid;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setImgid(Integer imgid) {
+        this.imgid = imgid;
     }
 
     public Integer getGid() {

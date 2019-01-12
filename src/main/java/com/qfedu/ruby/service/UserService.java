@@ -23,4 +23,5 @@ public interface UserService {
 
     public ResultBean userInfo(String token);
 
+
 }

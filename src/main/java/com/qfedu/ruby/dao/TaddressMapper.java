@@ -3,7 +3,6 @@ package com.qfedu.ruby.dao;
 import com.qfedu.ruby.pojo.Taddress;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -1,6 +1,7 @@
 package com.qfedu.ruby.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 public class Tgoods {
     private Integer id;
@@ -18,6 +19,68 @@ public class Tgoods {
     private Integer flag;
 
     private Date createtime;
+
+
+
+    private String brandname;
+
+    private String netweight;
+
+    private String gualityperiod;
+
+    private String address;
+
+    private String content;
+
+    public List<Tgoodsimg> getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(List<Tgoodsimg> imgs) {
+        this.imgs = imgs;
+    }
+
+    private List<Tgoodsimg> imgs;
+
+    public String getBrandname() {
+        return brandname;
+    }
+
+    public void setBrandname(String brandname) {
+        this.brandname = brandname;
+    }
+
+    public String getNetweight() {
+        return netweight;
+    }
+
+    public void setNetweight(String netweight) {
+        this.netweight = netweight;
+    }
+
+    public String getGualityperiod() {
+        return gualityperiod;
+    }
+
+    public void setGualityperiod(String gualityperiod) {
+        this.gualityperiod = gualityperiod;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Integer getId() {
         return id;
