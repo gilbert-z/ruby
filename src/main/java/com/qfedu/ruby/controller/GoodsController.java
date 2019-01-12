@@ -18,6 +18,8 @@ public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
+
+
     @ApiImplicitParam(name = "gtype", value = "商品类型", required=true,paramType="query")
     @ApiOperation(value = "获取商品列表",httpMethod = "GET",notes = "根据传入类型")
     @GetMapping("goods/goodslist.do")
@@ -49,5 +51,26 @@ public class GoodsController {
         ResultBean resultBean = goodsService.showNewGoods();
 
         return resultBean;
+    }
+
+
+    @ApiOperation(value = "今日热门",httpMethod = "GET",notes = "展示指定列表")
+    @GetMapping("goods/ByCollection.do")
+    ResultBean showByCollection(){
+        ResultBean resultBean = goodsService.showByCollection();
+
+        return resultBean;
+    }
+
+
+    @ApiImplicitParam(name = "gname", value = "商品名", paramType="query")
+    @ApiOperation(value = "搜索商品",httpMethod = "GET",notes = "根据传入类型")
+    @GetMapping("goods/goodsSearch.do")
+    ResultBean goodsSearch(String gname){
+        if (gname==null){
+            return goodsService.showByCollection();
+        }else {
+            return goodsService.showSeach(gname);
+        }
     }
 }

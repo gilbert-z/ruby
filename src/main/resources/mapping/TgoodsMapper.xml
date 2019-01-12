@@ -193,4 +193,20 @@ LEFT JOIN t_goodsimg m on g.id=m.gid where g.id=#{gid,jdbcType=INTEGER}
         from t_goods
         ORDER BY createtime Desc LIMIT 0,10
     </select>
+
+
+    <select id="selectByCollection" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+SELECT g.id,g.goodsname,g.gimg,g.gprice,g.gtype,g.gcount,g.flag,
+g.createtime,count(c.id) as count
+ FROM t_goods g
+LEFT JOIN t_collection c on g.id=c.sid
+GROUP BY g.id ORDER BY count(c.id) desc limit 0,10
+    </select>
+
+    <select id="selectByGname"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_goods
+        where goodsname like #{gname,jdbcType=VARCHAR}
+    </select>
 </mapper>

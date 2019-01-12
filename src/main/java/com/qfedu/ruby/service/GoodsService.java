@@ -24,4 +24,16 @@ public interface GoodsService {
      * @return
      */
     ResultBean showNewGoods();
+
+    /**
+     *展示最多收藏列表
+     * @return
+     */
+    ResultBean showByCollection();
+
+    /**
+     *展示搜素的内容
+     * @return
+     */
+    ResultBean showSeach(String gname);
 }

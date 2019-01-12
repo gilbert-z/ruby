@@ -67,4 +67,25 @@ public class GoodsServiceImpl implements GoodsService {
             return ResultUtil.SUCCESS(goods,SystemCon.OK);
         }
     }
+
+    @Override
+    public ResultBean showByCollection() {
+        List<Tgoods> goods= goodsMapper.selectByCollection();
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
+        }
+    }
+
+    @Override
+    public ResultBean showSeach(String gname) {
+        String name = "%"+gname+"%";
+        List<Tgoods> goods= goodsMapper.selectByGname(name);
+        if (goods==null){
+            return ResultUtil.ERROR();
+        }else {
+            return ResultUtil.SUCCESS(goods,SystemCon.OK);
+        }
+    }
 }

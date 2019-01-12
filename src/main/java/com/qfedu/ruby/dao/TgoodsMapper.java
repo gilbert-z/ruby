@@ -47,5 +47,17 @@ public interface TgoodsMapper {
      * @return
      */
     List<Tgoods> selectByDate();
+    /**
+     * 查询被收藏最多的列表
+     * @param
+     * @return
+     */
+    List<Tgoods> selectByCollection();
 
+    /**
+     * 根据名字查询
+     * @param
+     * @return
+     */
+    List<Tgoods> selectByGname(String gname);
 }
